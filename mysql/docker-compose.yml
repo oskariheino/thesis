@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2GB
+    environment:
+      MYSQL_ROOT_PASSWORD: ******
